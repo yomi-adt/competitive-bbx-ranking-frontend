@@ -2,9 +2,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import styles from './styling/GlobalNavbar.module.css'
+import styles from '../styling/common/GlobalNavbar.module.css'
 
-import lghsLogo from '../assets/lghs.png'
+import lghsLogo from '../../assets/lghs.png'
 
 function GlobalNavBar(){
     return (
