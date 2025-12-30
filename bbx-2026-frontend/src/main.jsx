@@ -5,7 +5,8 @@ import './index.css'
 import App from './App.jsx'
 import GlobalNavbar from './components/GlobalNavbar.jsx'
 import Container from 'react-bootstrap/esm/Container.js'
-import {Row, Col} from 'react-bootstrap'
+import { HashRouter } from 'react-router-dom';
+import {Row} from 'react-bootstrap'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -14,7 +15,9 @@ createRoot(document.getElementById('root')).render(
             <GlobalNavbar />
         </Row>
         <Row className='p-2'>
-            <App />
+            <HashRouter>
+                <App />
+            </HashRouter>
         </Row>
     </Container>
   </StrictMode>,
