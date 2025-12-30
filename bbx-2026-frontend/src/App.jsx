@@ -4,6 +4,7 @@ import './App.css'
 import Home from './views/Home'
 import Rankings from './views/Rankings'
 import NotFound from './views/NotFound'
+import Organizer from './views/Organizer'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/rankings" element={<Rankings />} />
+        <Route path="/organizer" element={<Organizer />} />
         <Route path="*" element={<NotFound />} />
     </Routes>
     </>

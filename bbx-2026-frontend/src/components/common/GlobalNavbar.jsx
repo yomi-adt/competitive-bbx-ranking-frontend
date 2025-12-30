@@ -39,6 +39,7 @@ function GlobalNavBar(){
                 <Nav className="me-auto">
                     <Nav.Link href="#home">Home</Nav.Link>
                     <Nav.Link href="#rankings">Rankings</Nav.Link>
+                    <Nav.Link href="#organizer">Organizers</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
             </Container>
