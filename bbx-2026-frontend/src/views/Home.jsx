@@ -25,7 +25,7 @@ function Home() {
                         <Card.Body>
                             Organizing a Ranked Tourney? Click to go to the dashboard!
                         </Card.Body>
-                        <Button>Go!</Button>
+                        <Button href="#organizer">Go!</Button>
                     </Card>
                 </Col>
             </Row>
