@@ -1,10 +1,37 @@
-import { Card, Row, Container, Col, Button } from "react-bootstrap"
+import { Card, Row, Container, Col, Button, Spinner } from "react-bootstrap"
+import { getTopNPlayers } from "../api/playersAPI"
+import { useEffect, useState } from "react"
 
 function Home() {
+    const [currentTopThree, setCurrentTopThree] = useState()
+    useEffect(() => {
+        setCurrentTopThree(getTopNPlayers(3))
+    }, [])
+
     return (
         <>
         <h2 className="p-2">Who will be this Season's Rank 1?</h2>
         <Container>
+            <Row className="p-2">
+                {!currentTopThree 
+                ? (
+                    <><Spinner></Spinner></>
+                ): (
+                    <>
+                    <Col>
+                        <p>2nd: {currentTopThree[1].name} [{currentTopThree[1].points} points]</p>
+                    </Col>
+
+                    <Col>
+                        <p>1st: {currentTopThree[0].name} [{currentTopThree[0].points} points]</p>
+                    </Col>
+
+                    <Col>
+                        <p>3rd: {currentTopThree[2].name} [{currentTopThree[2].points} points]</p>
+                    </Col>
+                    </>
+                )}
+            </Row>
             <Row>
                 <Col>
                     <Card className="p-0">

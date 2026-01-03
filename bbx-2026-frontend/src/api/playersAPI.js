@@ -90,7 +90,8 @@ export const getPlayersSortedByRank = () => {
     return sortByPoints(playersToSort)
 }
 
-export const topNPlayers = (n) => {
+export const getTopNPlayers = (n) => {
     let playersToSort = getPlayers()
-    return sortByPoints(playersToSort).slice(0, n-1)
+    console.log(sortByPoints(playersToSort).slice(0, n))
+    return sortByPoints(playersToSort).slice(0, n)
 }
