@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
-import {Spinner, Table, Pagination} from 'react-bootstrap'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
+import {Spinner, Table, Pagination, InputGroup, Form} from 'react-bootstrap'
 import {getPlayersSortedByRank} from '../api/playersAPI'
 
 
@@ -8,7 +10,6 @@ function Rankings() {
 
     useEffect(() => {
         setCurrentRankings(getPlayersSortedByRank())
-        console.log(getPlayersSortedByRank())
     }, [])
 
     const [currentPage, setCurrentPage] = useState(1); 
@@ -23,6 +24,15 @@ function Rankings() {
     return (
         <>
         <p>Rankings</p>
+
+        <InputGroup>
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+            <Form.Control
+            placeholder="Search by username"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+            />
+        </InputGroup>
         <Table striped bordered hover>
             <thead>
                 <tr>
