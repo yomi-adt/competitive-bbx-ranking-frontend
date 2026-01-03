@@ -34,6 +34,41 @@ const mockedPlayers = [
         name: "Blader Ministromi",
         points: 30012343,
     },
+    {
+        id: 11,
+        name: "Yomi",
+        points: 100,
+    },
+    {
+        id: 12,
+        name: "Jeromi",
+        points: 200,
+    },
+    {
+        id: 13,
+        name: "Ministromi",
+        points: 300,
+    },
+    {
+        id: 14,
+        name: "Yomi",
+        points: 1020,
+    },
+    {
+        id: 15,
+        name: "Jeromi",
+        points: 23200,
+    },
+    {
+        id: 16,
+        name: "Ministromi",
+        points: 30013,
+    },
+    {
+        id: 17,
+        name: "Ministromi",
+        points: 30012343,
+    },
 ]
 
 // TODO: Use real API call when backend is implemented

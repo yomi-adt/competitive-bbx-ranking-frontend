@@ -12,28 +12,33 @@ function Rankings() {
         setCurrentRankings(getPlayersSortedByRank())
     }, [])
 
+    useEffect(() => {
+        setCurrentRankings(getPlayersSortedByRank())
+    }, [])
+
     const [currentPage, setCurrentPage] = useState(1); 
+    const [searchUsername, setSearchUserName] = useState("")
     const itemsPerPage = 10;
 
     const indexOfLast = currentPage * itemsPerPage;
     const indexOfFirst = indexOfLast - itemsPerPage;
-    const currentItems = currentRankings.slice(indexOfFirst, indexOfLast);
+    const filtered = currentRankings.filter(item => searchUsername === "" || item.name.toLowerCase().startsWith(searchUsername.toLowerCase()));
+    const currentItems = filtered.slice(indexOfFirst, indexOfLast);
 
-    const totalPages = Math.ceil(currentRankings.length / itemsPerPage);
+    const totalPages = Math.ceil(filtered.length / itemsPerPage);
 
     return (
         <>
-        <p>Rankings</p>
-
-        <InputGroup>
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
+        <InputGroup className='p-3'>
+            <InputGroup.Text><FontAwesomeIcon icon={faMagnifyingGlass} /></InputGroup.Text>
             <Form.Control
             placeholder="Search by username"
             aria-label="Username"
-            aria-describedby="basic-addon1"
+            value={searchUsername}
+            onChange={(e) => setSearchUserName(e.target.value)}
             />
         </InputGroup>
-        <Table striped bordered hover>
+        <Table striped bordered>
             <thead>
                 <tr>
                     <th>
