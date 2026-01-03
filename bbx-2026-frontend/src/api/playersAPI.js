@@ -76,12 +76,21 @@ export const getPlayers = () => {
     return mockedPlayers
 }
 
-export const getPlayersSortedByRank = () => {
-    let sortedPlayers = getPlayers()
-    sortedPlayers.sort((a,b) => b.points - a.points)
-    // Add rank attribute to each player
-    sortedPlayers.forEach((player, index) => {
-        player.rank = index+1 // Indexed starts at 0
-    })
+function sortByPoints(playersToSort){
+    const sortedPlayers = playersToSort.sort((a,b) => b.points - a.points)
+    sortedPlayers
+        .forEach((player, index) => {
+            player.rank = index+1 // Indexed starts at 0
+        })
     return sortedPlayers
+}
+
+export const getPlayersSortedByRank = () => {
+    let playersToSort = getPlayers()
+    return sortByPoints(playersToSort)
+}
+
+export const topNPlayers = (n) => {
+    let playersToSort = getPlayers()
+    return sortByPoints(playersToSort).slice(0, n-1)
 }

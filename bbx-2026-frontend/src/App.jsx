@@ -5,6 +5,7 @@ import Home from './views/Home'
 import Rankings from './views/Rankings'
 import NotFound from './views/NotFound'
 import Organizer from './views/Organizer'
+import ComingSoon from './views/ComingSoon'
 
 function App() {
 
@@ -14,7 +15,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/rankings" element={<Rankings />} />
-        <Route path="/organizer" element={<Organizer />} />
+        <Route path="/organizer" element={<ComingSoon />} />
+        <Route path="/tournaments" element={<ComingSoon />} />
         <Route path="*" element={<NotFound />} />
     </Routes>
     </>

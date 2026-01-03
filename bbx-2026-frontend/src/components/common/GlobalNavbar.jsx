@@ -38,7 +38,7 @@ function GlobalNavBar(){
                             rel="noopener noreferrer"
                         >
                             <span>
-                                Yomi
+                                yomi-adt
                             </span>
                         </Navbar.Brand>
                     </Col>

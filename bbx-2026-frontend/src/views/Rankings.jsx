@@ -3,14 +3,11 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 import {Spinner, Table, Pagination, InputGroup, Form} from 'react-bootstrap'
 import {getPlayersSortedByRank} from '../api/playersAPI'
+import { getLastUpdated } from '../api/generalAPI'
 
 
 function Rankings() {
     const [currentRankings, setCurrentRankings] = useState([])
-
-    useEffect(() => {
-        setCurrentRankings(getPlayersSortedByRank())
-    }, [])
 
     useEffect(() => {
         setCurrentRankings(getPlayersSortedByRank())
@@ -83,6 +80,8 @@ function Rankings() {
             <Pagination.Next disabled={currentPage === totalPages} onClick={() => setCurrentPage((p) => p + 1)}
             />
         </Pagination>
+
+        <i>Last Updated: {getLastUpdated()}</i>
         </>
     )
 }
