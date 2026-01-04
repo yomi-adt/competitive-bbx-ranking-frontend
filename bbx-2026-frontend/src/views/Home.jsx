@@ -53,7 +53,7 @@ function Home() {
                     </>
                 )}
             </Row>
-            <hr></hr>
+            {/* <hr></hr> */}
             {/* <Row>
                 <Col>
                     <Card className="p-0">
