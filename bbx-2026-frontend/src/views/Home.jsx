@@ -1,4 +1,4 @@
-import { Card, Row, Container, Col, Button, Spinner } from "react-bootstrap"
+import { Card, CardHeader, Row, Container, Col, Button, Spinner } from "react-bootstrap"
 import { getTopNPlayers } from "../api/playersAPI"
 import { useEffect, useState } from "react"
 
@@ -15,24 +15,48 @@ function Home() {
             <Row className="p-2">
                 {!currentTopThree 
                 ? (
+                    <Spinner></Spinner>
+                ) : (
+                    <Col>
+                        <Card className="p-0">
+                        <CardHeader as="h4">First Place</CardHeader>
+                        <Card.Body>
+                            <Card.Title>{currentTopThree[0].name}</Card.Title>
+                            <Card.Text>with {currentTopThree[0].points} points!</Card.Text>
+                        </Card.Body>
+                        </Card>
+                    </Col>
+                )}
+            </Row>
+            <Row className="p-2">
+                {!currentTopThree 
+                ? (
                     <><Spinner></Spinner></>
                 ): (
                     <>
                     <Col>
-                        <p>2nd: {currentTopThree[1].name} [{currentTopThree[1].points} points]</p>
+                        <Card className="p-0">
+                        <CardHeader as="h4">Second Place</CardHeader>
+                        <Card.Body>
+                            <Card.Title>{currentTopThree[1].name}</Card.Title>
+                            <Card.Text>with {currentTopThree[1].points} points!</Card.Text>
+                        </Card.Body>
+                        </Card>
                     </Col>
-
                     <Col>
-                        <p>1st: {currentTopThree[0].name} [{currentTopThree[0].points} points]</p>
-                    </Col>
-
-                    <Col>
-                        <p>3rd: {currentTopThree[2].name} [{currentTopThree[2].points} points]</p>
+                        <Card className="p-0">
+                        <CardHeader as="h4">Third Place</CardHeader>
+                        <Card.Body>
+                            <Card.Title>{currentTopThree[2].name}</Card.Title>
+                            <Card.Text>with {currentTopThree[2].points} points!</Card.Text>
+                        </Card.Body>
+                        </Card>
                     </Col>
                     </>
                 )}
             </Row>
-            <Row>
+            <hr></hr>
+            {/* <Row>
                 <Col>
                     <Card className="p-0">
                         <Card.Header as="h5">
@@ -55,7 +79,7 @@ function Home() {
                         <Button href="#organizer">Go!</Button>
                     </Card>
                 </Col>
-            </Row>
+            </Row> */}
         </Container>
         </>
     )
