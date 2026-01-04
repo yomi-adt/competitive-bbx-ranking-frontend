@@ -48,18 +48,7 @@ function GlobalNavBar(){
                     <Nav className="me-auto">
                         <Nav.Link href="#home">Home</Nav.Link>
                         <Nav.Link href="#rankings">Rankings</Nav.Link>
-                        <Nav.Link href="#tournaments">Tournaments</Nav.Link>
-                        <NavDropdown title="Organizer" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#organizer/tourney/new">
-                        New tourney
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="#organizer/tourney/past">
-                        View previous tourneys
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="#organizer/parts">
-                        View, Add or Remove parts
-                        </NavDropdown.Item>
-                        </NavDropdown>
+                        <Nav.Link href="#organizer">Organizers</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
