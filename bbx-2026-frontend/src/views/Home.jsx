@@ -19,10 +19,10 @@ function Home() {
                 ) : (
                     <Col>
                         <Card className="p-0">
-                        <CardHeader as="h4">First Place</CardHeader>
+                        <CardHeader as="h4">First Place: {currentTopThree[0].name}</CardHeader>
                         <Card.Body>
-                            <Card.Title>{currentTopThree[0].name}</Card.Title>
-                            <Card.Text>with {currentTopThree[0].points} points!</Card.Text>
+                            <Card.Title>with {currentTopThree[0].points} points!</Card.Title>
+                            <Card.Text>(Insert blader info when its implemented)</Card.Text>
                         </Card.Body>
                         </Card>
                     </Col>
@@ -36,18 +36,16 @@ function Home() {
                     <>
                     <Col>
                         <Card className="p-0">
-                        <CardHeader as="h4">Second Place</CardHeader>
+                        <CardHeader as="h4">Second Place: {currentTopThree[1].name}</CardHeader>
                         <Card.Body>
-                            <Card.Title>{currentTopThree[1].name}</Card.Title>
                             <Card.Text>with {currentTopThree[1].points} points!</Card.Text>
                         </Card.Body>
                         </Card>
                     </Col>
                     <Col>
                         <Card className="p-0">
-                        <CardHeader as="h4">Third Place</CardHeader>
+                        <CardHeader as="h4">Third Place: {currentTopThree[2].name}</CardHeader>
                         <Card.Body>
-                            <Card.Title>{currentTopThree[2].name}</Card.Title>
                             <Card.Text>with {currentTopThree[2].points} points!</Card.Text>
                         </Card.Body>
                         </Card>
